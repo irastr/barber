@@ -1,0 +1,50 @@
+{%
+  set sliderItems = [
+    { 
+      id: 0,
+      imgPath: 'img/reviews_barker_mob.png',
+      imgDesktopPath: 'img/reviews_barker.png',
+      title: 'Трэвис Баркер',
+      description: 'Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!',
+      link: '#'
+    }
+  ]
+%}
+
+{% import 'components/homepage/feedback/feedback-slider/feedback-item.html' as item %}
+
+<div class="feedback__slider-wrap">
+  <button class="feedback__btn feedback__btn--prev">
+    <i class="fas fa-caret-left"></i>
+  </button>
+  <ul class="feedback__slider-list">
+    {% for sliderItem in sliderItems %}
+      <li class="feedback__slider-item">
+        {{ 
+          item.feedbackItem
+          (
+            sliderItem.imgPath,
+            sliderItem.title,
+            sliderItem.description,
+            sliderItem.link,
+            sliderItem.imgDesktopPath
+          )
+        }}
+      </li>
+    {% endfor %}
+  </ul>
+  <button class="feedback__btn feedback__btn--next">
+    <i class="fas fa-caret-right"></i>
+  </button>
+
+  <ul class="feedback__dots-list">
+    {% for btnItem in sliderItems %}
+      <li class="feedback__dots-item">
+        <button
+          class="feedback__dots-btn {% if btnItem.id == 0 %} feedback__dots-btn--active {% endif %}" 
+          data-id="{{ btnItem.id }}"
+        ></button>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

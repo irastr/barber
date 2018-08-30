@@ -1,0 +1,16 @@
+{% macro feedbackItem(imgPath, title, description, link, imgDesktopPath) %}
+  <a href="{{ link }}" class="feedback__slider-item-wrap">
+    <picture>
+      <source srcset="{{ imgDesktopPath }}" media="(min-width: 992px)">
+        <source srcset="{{ imgPath }}" media="(min-width: 320px)">
+        <img src="{{ imgPath }}" alt="" class="feedback__slider-avatar">
+    </picture>
+
+    <div class="feedback__slider-description-wrap">
+      <h3 class="feedback__slider-title">{{ title }}</h3>
+      <p class="feedback__slider-description">
+        {{ description | truncate(99, true, "...")}}
+      </p>
+    </div>
+  </a>
+{% endmacro %}

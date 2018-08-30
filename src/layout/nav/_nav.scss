@@ -1,0 +1,135 @@
+.nav {
+  position: fixed;
+  background: $brown;
+  right: 0;
+  top: 67px;
+  height: calc(100vh - 67px);
+  width: 250px;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+
+  @include medium {
+    position: static;
+    height: auto;
+    background: none;
+    width: 100%;
+    transform: translateX(0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu-btn-checkbox:checked ~ .nav {
+  transform: translateX(0);
+}
+
+.nav__list {
+  background: $semi-brown;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include medium {
+    background: none;
+    display: flex;
+  }
+}
+
+.nav__item {
+  display: flex;
+  line-height: 1;
+  &:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include medium {
+      border: none;
+      margin-left: 30px;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $brown;
+    @include medium {
+      border: none;
+    }
+  }
+
+  @include medium {
+    &:first-child .nav__link {
+      padding-left: 0;
+    }
+  }
+}
+
+.nav__link {
+  display: block;
+  text-transform: uppercase;
+  font-family: "PT Sans Bold", sans-serif;
+  line-height: 0.8;
+  color: #fff;
+  @include rem(18);
+  text-decoration: none;
+  padding: 15px 20px;
+
+  @include medium {
+    padding: 28px 0;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: $brown;
+      transform: translateX(-50%);
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:active:after {
+      width: 100%;
+    }
+  }
+
+  @include large {
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}
+
+.login-btn {
+  padding: 0;
+  background: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 20px;
+
+  @include medium {
+    margin: 0;
+  }
+}
+
+.login-btn__img {
+  opacity: 0.5;
+}
+
+.login-btn__title {
+  @include rem(18);
+  margin-left: 15px;
+  text-transform: uppercase;
+  @include font(bold);
+
+  @include medium {
+    display: none;
+  }
+  @include large {
+    display: block;
+  }
+}

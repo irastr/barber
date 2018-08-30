@@ -1,0 +1,23 @@
+.feedback {
+  background: #f7f5f1;
+  padding: 35px 0 20px 0;
+
+  @include medium {
+    border-bottom: 1px solid #e5dcd4;
+    padding-bottom: 40px;
+  }
+
+  @include large {
+    padding-bottom: 100px;
+  }
+}
+
+.inner-feedback {
+  padding: 0 20px;
+  @include medium {
+    @include container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

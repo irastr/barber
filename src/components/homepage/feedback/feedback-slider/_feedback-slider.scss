@@ -1,0 +1,171 @@
+.feedback__slider-wrap {
+  order: 3;
+  @include medium {
+    position: relative;
+    display: flex;
+    margin-top: 40px;
+  }
+
+  @include large {
+    justify-content: space-between;
+  }
+}
+
+.feedback__slider-list {
+  list-style: none;
+  padding: 0;
+  margin: 35px 0 0 0;
+
+  @include medium {
+    margin: 0;
+    border: 1px solid #e5dcd4;
+    border-right: none;
+    border-left: none;
+  }
+
+  @include large {
+    border: 1px solid #e5dcd4;
+    margin: 0 20px;
+    flex: 1 0;
+  }
+}
+
+.feedback__slider-item {
+  &:not(:last-child) {
+    margin-bottom: 25px;
+    @include medium {
+      margin: 0;
+    }
+  }
+
+  @include medium {
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+}
+
+.feedback__slider-item-wrap {
+  display: flex;
+  align-items: flex-start;
+  color: #000;
+  text-decoration: none;
+
+  @include medium {
+    align-items: center;
+    padding: 30px;
+  }
+
+  @include large {
+    padding: 0;
+  }
+}
+
+.feedback__slider-avatar {
+  display: block;
+  max-width: 50px;
+
+  @include medium {
+    border-radius: 50%;
+    width: 80px;
+    max-width: 80px;
+  }
+
+  @include large {
+    border-radius: 0;
+    max-width: 250px;
+    width: 250px;
+  }
+}
+
+.feedback__slider-description-wrap {
+  margin-left: 20px;
+
+  @include medium {
+    flex: 1 0;
+  }
+
+  @include large {
+    margin-left: 70px;
+    padding-right: 80px;
+  }
+}
+
+.feedback__slider-title {
+  margin: 0;
+  @include rem(20);
+  font-weight: normal;
+  @include font(bold);
+}
+
+.feedback__slider-description {
+  @include rem(18);
+  line-height: 27px;
+  margin: 20px 0 0 0;
+}
+
+.feedback__dots-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  justify-content: center;
+
+  @include medium {
+    display: flex;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7f5f1;
+    padding: 0 25px;
+  }
+
+  @include large {
+    bottom: -40px;
+    background: transparent;
+  }
+}
+
+.feedback__dots-item {
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.feedback__dots-btn {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #92918f;
+  background: transparent;
+  padding: 0;
+  transform: rotate(45deg);
+}
+
+.feedback__dots-btn--active {
+  border-color: #000;
+  background: #000;
+}
+
+.feedback__btn-wrap {
+  display: none;
+
+  @include medium {
+    display: block;
+    order: 2;
+  }
+}
+
+.feedback__btn {
+  display: none;
+
+  @include medium {
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 0;
+    border: 1px solid #e5dcd4;
+  }
+}

@@ -1,0 +1,34 @@
+{%
+  set newsItem = [
+    { dateNumber: '29', dateMonth: 'сент', description: 'Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.' },
+    { dateNumber: '29', dateMonth: 'сент', description: 'Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.' },
+    { dateNumber: '29', dateMonth: 'сент', description: 'Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.' },
+    { dateNumber: '29', dateMonth: 'сент', description: 'Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.' }
+  ]  
+%}
+
+<section class="news">
+  <div class="inner-news">
+    <h3 class="section-title">Новости и акции</h3>
+
+    <ul class="news__list">
+
+      {% for item in newsItem %}
+      <li class="news__item">
+        <date datetime="2018-05-12" class="news__date">
+          <span class="news__date-count">{{ item.dateNumber }}</span>
+          <span class="news__date-month">{{ item.dateMonth | truncate(4, true, "") }}</span>
+        </date>
+        <a href="#" class="news__link">
+          {{ item.description }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="news__load-more">
+      <a href="#" class="ui-btn">Показать все</a>
+    </div>
+
+  </div>
+</section>

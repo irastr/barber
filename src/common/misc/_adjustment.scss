@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $basic-font-size + px;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'PT Sans Regular', sans-serif;
+  background: #242424;
+  color: #fff;
+}
+
+.maincontent {
+  flex: 1 0;
+}
+
+.ui-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  border: 1px solid #e5ddd5;
+  text-align: center;
+  @include rem(18);
+  @include font(bold);
+  padding: 14px;
+
+  @include medium {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #000;
+  margin: 0;
+  @include font(bold);
+  @include rem(30);
+
+  @include large {
+    @include rem(40);
+  }
+}

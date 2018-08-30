@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+{% set pageTitle = 'Главная' %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+  {% include 'components/homepage/statistics/statistics.html' %}
+  {% include 'components/homepage/features/features.html' %}
+  {% include 'components/homepage/news/news.html' %}
+  {% include 'components/homepage/feedback/feedback.html' %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{%
+  set navItems = [
+    { title: 'Главная', path: 'index.html' },
+    { title: 'Наши работы', path: 'works.html' },
+    { title: 'Записаться', path: 'form.html' },
+    { title: 'Контакты', path: 'contacts.html' }
+  ]  
+%}
+
+
+<nav class="nav">
+  <ul class="nav__list">
+    {% for item in navItems %}
+      <li class="nav__item">
+        <a href="{{ item.path }}" class="nav__link">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <button class="login-btn">
+    <img src="img/login.svg" class="login-btn__img">
+    <span class="login-btn__title">Войти</span>
+  </button>
+</nav>
